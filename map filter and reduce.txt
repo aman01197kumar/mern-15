@@ -1,0 +1,25 @@
+1. Given the array [1, 2, 3, 4], return a new array with each element doubled.
+
+2. Return all even numbers from the array [5, 8, 12, 15, 19, 20].
+
+3. Find the sum of all numbers in the array [3, 6, 9, 12].
+
+4. Function to find the maximum value in an array: [10, 55, 32, 67, 89].
+
+5. Get all odd numbers from [1, 2, 3, 4, 5], then square them.
+
+6. Given the array of strings ['apple', 'banana', 'grape'], return the length of each string.
+
+7. Count the number of times each item appears in the array:
+['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+
+8. Convert an array of numbers into an array of strings with a dollar sign prefix, e.g., [10, 20, 30] → ['$10', '$20', '$30'].
+
+9. Flatten an array of arrays:
+[[1, 2], [3, 4], [5]]
+output=>[1,2,3,4,5]
+
+10. Remove falsy values from an array:
+[0, "hello", false, null, 42, "", undefined]
+
+11. mplement your own version of the map() function.

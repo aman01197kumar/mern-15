@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // console.log(1);
+        // console.log(2);
+        // console.log(3);
+        // setTimeout(() => console.log(4), 1000)
+        // console.log(5);
+        // setTimeout(() => console.log(6), 0)
+        //123546
+
+        // const bakeBread = (statement, cb) => {
+        //     setTimeout(() => {
+        //         console.log(statement);
+        //         cb()
+        //     }, 1000)
+        // }
+
+        // const stuffing = (statement, cb) => {
+        //     setTimeout(() => {
+        //         console.log(statement);
+        //         cb()
+        //     }, 1000)
+        // }
+        // const grilled = (statement, cb) => {
+        //     setTimeout(() => {
+        //         console.log(statement);
+        //         cb()
+        //     }, 1000)
+        // }
+
+        // bakeBread("bread is baked", () => {
+        //     stuffing("stuffind has been done!!!", () => {
+        //         grilled("sandwich has been grilled", () => {
+        //             setTimeout(() => console.log("Ready to serve!!!"), 1000)
+        //         })
+        //     })
+        // })
+
+        // const promise = new Promise((resolve, reject) => {
+        //     const x = 5
+
+        //     if (x === 5) {
+        //         resolve("resolved and check!!!")
+        //         return
+        //     }
+        //     reject("not resolved and faillleedd!!!")
+
+        // })
+
+        // promise.then((aman) => console.log(aman)).catch((gfg) => console.log(gfg))
+
+        const bakeBread = (statement) => {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+                    // console.log(statement);
+                    resolve(statement)
+                }, 1000)
+            })
+        }
+
+        const stuffing = (statement) => {
+            return new Promise((resolve, reject) => {
+
+                if (statement) {
+                    setTimeout(() => {
+                        // console.log(statement);
+                        resolve(statement)
+                    }, 1000)
+                }
+                else reject("not working")
+            })
+        }
+        const grilled = (statement) => {
+            return new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+                    // console.log(statement);
+                    resolve(statement)
+                }, 1000)
+            })
+        }
+
+        bakeBread("bread is being baked")
+            .then(() => stuffing())
+            .then((res) => grilled(res))
+            .then((res) => console.log(res))
+            .catch(() => console.log("something went wrong"))
+
+        // const asyncFunc = async () => {
+        //     const a = 1
+        //     const b = 2
+        //     const c = await a + b
+        //     console.log(c);
+        //     console.log('hello');
+        // }
+        // // console.log(asyncFunc());
+        // asyncFunc().then((res) => console.log(res)).catch(err => console.log(err))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function outerFunc() {
+        //     return function innerFunc() {
+        //         return "hello world"
+        //     }
+        // }
+        // console.log(outerFunc()())
+
+
+        // currying=>
+        // Currying is used in JavaScript to break down complex function calls
+        // into smaller, more manageable steps. It transforms a function with
+        // multiple arguments into a series of functions, each taking a single
+        // argument.
+
+        // function sum(a, b, c) {
+        //     return a+b+c
+        // }
+        // console.log(sum(1, 2));
+
+        // // function sum(a) {
+        // //     return function (b) {
+        // //         return function (c) {
+        // //             return a + b + c
+        // //         }
+        // //     }
+        // // }
+
+        // // console.log(sum(1)(2)(3));
+
+        //Rest and Spread operators=>ES6
+
+        // const arr = [1, 3, 6, 5]
+        // const arr2 = [0, 9, 3, 2, 8]
+        // const arr3 = [1, 34, 23, 7]
+        // const arr4 = [44, 100, 110, 10]
+
+        // // const newArr = arr.concat(arr2)
+        // // console.log(newArr);
+
+
+        // //rest operator
+
+        // function sum(a,b,c,...d){
+        //     const add = a+b+c
+        //     const double = d.map(elem=>elem*2)
+
+        //     return {add,double}
+        // }
+
+        // //spread operator(...)=>
+        // const restArr = [...arr, ...arr2, ...arr3, ...arr4]
+        // console.log(sum(...restArr)); //argument
+
+
+        //destructuring=>ES6
+
+        // const arr = []
+        // console.log(typeof arr);
+        // console.log(typeof obj);
+        // const obj = {
+        //     name: "Vinit",
+        //     age: 200,
+        //     isStudent: true,
+        //     address: {
+        //         room_number: 11,
+        //         city: "Noida",
+        //         state: "Uttar Pradesh"
+        //     },
+        //     skills: ['a', 'b', 'c']
+        // }
+
+        // obj.gender = "male"
+        // const toSentenceCase = obj.skills.map(elem=>elem.toUpperCase())
+        // console.log(toSentenceCase);
+        // const data = [
+        //     {
+        //         name: "harsh",
+        //         age: 11
+        //     },
+        //     {
+        //         name: "raman",
+        //         age: 21
+        //     },
+        //     {
+        //         name: "vivek",
+        //         age: 15
+        //     },
+        //     {
+        //         name: "priyanka",
+        //         age: 20
+        //     },
+        //     {
+        //         name: "jaya",
+        //         age: 23
+        //     },
+        //     {
+        //         name: "ridhima",
+        //         age: 27
+        //     }
+        // ]
+        // const toSentenceCase = data.map(obj => obj.name[0].toUpperCase() + obj.name.slice(1).toLowerCase())
+        // console.log(toSentenceCase);
+
+        //Object.keys,Object.values.Object.entries
+
+        // const obj = {
+        //     name: "Vinit",
+        //     age: 200,
+        //     isStudent: true,
+        //     address: {
+        //         room_number: 11,
+        //         city: "Noida",
+        //         state: "Uttar Pradesh"
+        //     },
+        //     skills: ['a', 'b', 'c']
+        // }
+
+        // console.log(Object.keys(obj));
+        // console.log(Object.values(obj));
+        // console.log(Object.entries(obj));
+
+        // const arr = ["jaismin", "venkatesh", "gopalachari", "latika"]
+
+        // const newArr = []
+
+        // arr.forEach(elem => {
+        //     const word = elem[0].toLocaleUpperCase() + elem.slice(1).toLowerCase()
+        //     newArr.push(word)
+        // })
+
+        // console.log(newArr);
+
+        //for-of,for-in
+
+        // const obj = {
+        //     name: "Vinit",
+        //     age: 200,
+        //     isStudent: true,
+        //     address: {
+        //         room_number: 11,
+        //         city: "Noida",
+        //         state: "Uttar Pradesh"
+        //     },
+        //     skills: ['a', 'b', 'c']
+        // }
+
+
+        // const arr = ["jaismin", "venkatesh", "gopalachari", "latika"]
+
+        // for (let i of arr) {
+        //     console.log(i);
+        // }
+
+        // for (let i in obj) {
+        //     console.log(obj[i]);
+        // }
+
+        // for(let i in arr){
+        //     console.log(arr[i]);
+        // }
+
+        //find the most occurance character of a string
+
+        function findOccurance(str) {
+            const obj = {}
+
+            const newStr = str.split(' ').join("").split('')
+
+            for (let char of newStr) {
+                if (!obj[char]) obj[char] = 1
+                else obj[char] += 1
+            }
+
+            let maxCount = 0
+            let maxChar = ""
+            for (let char in obj) {
+                // console.log(obj[char]);
+                if (obj[char] > maxCount) {
+                    maxChar = char
+                    maxCount = obj[char]
+                }
+
+            }
+            return maxChar
+        }
+
+        console.log(findOccurance('hello wwwwwwwwworld'));
+    </script>
+</body>
+
+</html>
