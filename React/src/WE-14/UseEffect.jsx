@@ -14,16 +14,15 @@ const UseEffect = () => {
     //     console.log('i am running');
     // }, [count])
 
-    // console.log(count);
     // useEffect(() => {
-    //     console.log(count);
+    //     console.log('component mounted!!');
 
-    //     return ()=>{
-    //         console.log('helloww');
-    //         // if(count===5)
-    //         //     console.log('cleanup done!!!');
+    //     return () => {
+    //         if (count === 5) {
+    //             console.log('cleanup done!!!');
+    //         }
     //     }
-    // }, [])
+    // }, [count])
     return (
         <>
 

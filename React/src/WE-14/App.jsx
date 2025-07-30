@@ -42,6 +42,11 @@ import React from 'react'
 import UseEffect from './UseEffect'
 import Button from './Button'
 import PostOffice from './UseContext/PostOffice'
+import UseCallback from '../WE-15/UseCallback/UseCallback'
+import UseMemo from '../WE-15/UseMemo/UseMemo'
+import UseRef from '../WE-15/UseRef/UseRef'
+import Navigation from '../WE-15/Router/Navigation'
+import TailwindHeader from '../WE-15/TailwindHeader'
 
 const App = () => {
     const buttonData = [{
@@ -62,18 +67,23 @@ const App = () => {
     },]
     return (
         // <div><UseEffect/></div>
-        <>
-            {/* <Button title="subscribe" backgroundColor="red" />
-            <Button title="login" backgroundColor="yellow" />
-            <Button title="cart" backgroundColor="pink" />
-            <Button title="logout" backgroundColor="aqua" /> */}
-            {/* {
-                buttonData.map(({ title, backgroundColor }) => (
-                    <Button key={title} title={title} backgroundColor={backgroundColor} />
-                ))
-            } */}
-            <PostOffice/>
-        </>
+        // <>
+        //     {/* <Button title="subscribe" backgroundColor="red" />
+        //     <Button title="login" backgroundColor="yellow" />
+        //     <Button title="cart" backgroundColor="pink" />
+        //     <Button title="logout" backgroundColor="aqua" /> */}
+        //     {/* {
+        //         buttonData.map(({ title, backgroundColor }) => (
+        //             <Button key={title} title={title} backgroundColor={backgroundColor} />
+        //         ))
+        //     } */}
+        //     <PostOffice/>
+        // </>
+        // <div><UseCallback/></div>
+        // <div><UseMemo/></div>
+        // <div><UseRef/></div>
+        // <div><Navigation /></div>
+        <div><TailwindHeader/></div>
     )
 }
 
