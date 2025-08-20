@@ -13,13 +13,14 @@ const app = express()
 
 app.use(express.json())
 
-try {
-    mongoose.connect(process.env.MONGO_URI)
-    console.log('db connected!!!');
-}
-catch (err) {
-    console.log(err);
-}
+const MONGO_URI = process.env.MONGO_URI;
+// app.use(cors({ origin: true }));
+mongoose
+    .connect(MONGO_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch((err) => console.error("Connection error:", err));
+
+app.use(express.json());
 
 
 //application based middleware
