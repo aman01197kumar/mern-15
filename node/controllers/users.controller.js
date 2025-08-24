@@ -48,17 +48,17 @@ const login = async (req, res) => {
     }
     token = await jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '1hr' })
     // return res.status(200).json({ message: 'user logged in successfully!!', success: true, status: 200 })
-    res.send(token)
+    res.status(200).json({ message: 'user loggedin succeessfully!!', status: 200, success: true, token })
 
 }
 
 const content = async (req, res) => {
-    const { token } = req.body
-    const decode = await jwt.verify(token, process.env.SECRET_KEY)
+    const authHeader = req.headers['authorization'].split(' ')[1]
 
-    console.log('de');
-    return res.send(decode.email)
-  
+    const decode = await jwt.verify(authHeader, process.env.SECRET_KEY)
+
+    return res.send(decode)
+
 
 }
 
